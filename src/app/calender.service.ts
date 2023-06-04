@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
-import { CalendarModel, UserModel } from 'src/calendar.model';
+import { CalendarModel, TaskModel, UserModel } from 'src/calendar.model';
 
 @Injectable({
   providedIn: 'root'
@@ -32,13 +32,13 @@ export class CalenderService {
     );
    }
 
-   createTask(newTask: Pick<CalendarModel, 'task'> ): Observable<CalendarModel> {
+   createTask(newTask: CalendarModel ): Observable<CalendarModel> {
 
-    const task: Pick<CalendarModel, 'task'> = {
+    const task: CalendarModel  = {
       ...newTask
     }
-
-    return this.httpClient.post<CalendarModel>(this.url, task)
+    console.log(newTask)
+    return this.httpClient.put<CalendarModel>(`${this.url}/${newTask.id}`, task)
    }
 
 }

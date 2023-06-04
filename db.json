@@ -13,76 +13,84 @@
       "tel": "0690000000"
     }
   ],
-  
   "calendar": [
-    { 
-    "year": "2023", 
-    "month": "Juni", 
-    "day_number": "1", 
-    "day_name": "thursday", 
-    "task": {
-      "actionName": "Action 1",
-      "time": "17:30", 
-      "userId": 1
-    } 
+    {
+      "id": 1,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "1",
+      "day_name": "thursday",
+      "task": {
+        "actionName": "Action 1",
+        "time": "17:30",
+        "userId": 1
+      }
     },
     {
-    "year": "2023", 
-    "month": "Juni", 
-    "day_number": "2", 
-    "day_name": "friday", 
-    "task": {
-      "actionName": "Action 2",
-      "time": "14:30", 
-      "userId": 2
-    } 
+      "id": 2,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "2",
+      "day_name": "friday",
+      "task": {
+        "actionName": "Action 2",
+        "time": "14:30",
+        "userId": 2
+      }
     },
-    { 
-    "year": "2023", 
-    "month": "Juni", 
-    "day_number": "3", 
-    "day_name": "saturday", 
-    "task": {
-      "actionName": "Action 3",
-      "time": "14:30", 
-      "userId": 1
-    } 
+    {
+      "id": 3,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "3",
+      "day_name": "saturday",
+      "task": {
+        "actionName": "Action 3",
+        "time": "14:30",
+        "userId": 1
+      }
     },
-    { 
-    "year": "2023", 
-    "month": "Juni", 
-    "day_number": "4", 
-    "day_name": "sunday", 
-    "task": {
-
-    } 
+    {
+      "id": 4,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "4",
+      "day_name": "sunday",
+      "task": {
+        "actionName": "hair",
+        "time": "all",
+        "userId": 1
+      }
     },
-    { 
-    "year": "2023", 
-    "month": "Juni", 
-    "day_number": "5", 
-    "day_name": "monday", 
-    "task": {
-
-    } 
+    {
+      "id": 5,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "5",
+      "day_name": "monday",
+      "task": {}
     },
-    { 
-    "year": "2023", 
-    "month": "Juni", 
-    "day_number": "6", 
-    "day_name": "tuesday", 
-    "task": {
-
-    } 
+    {
+      "id": 6,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "6",
+      "day_name": "tuesday",
+      "task": {}
     },
-    { 
-    "year": "2023", 
-    "month": "Juni", 
-    "day_number": "7", 
-    "day_name": "wednesday", 
-    "task": {
-
-    } 
+    {
+      "id": 7,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "7",
+      "day_name": "wednesday",
+      "task": {}
+    },
+    {
+      "actionName": "beard",
+      "time": "beard",
+      "userId": 1,
+      "id": 8
     }
   ]
 }

@@ -1,15 +1,17 @@
 export interface CalendarModel {
-    userId(userId: any): unknown;
+    id: number
     year: number,
     month: string,
     day_number: number,
     day_name: string,
-    task?: {
-        actionName: string,
-        time: string,
-        userId: number,
-    }
+    task?: TaskModel
 }
+
+export interface TaskModel {
+    actionName: string;
+    time: string;
+    userId: number;
+  }
 
 export interface UserModel {
     id: number,

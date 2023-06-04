@@ -1,1 +1,31 @@
-<p>task-form works!</p>
+<form (ngSubmit)="onSubmit()">
+    <label for="day">Select Day:</label>
+    <select id="day" name="day" [(ngModel)]="selectedDay">
+      <option *ngFor="let day of calendarData" [ngValue]="day"> {{ day.day_number }} {{ day.day_name }} {{ day.year }}</option>
+    </select>
+    <div>
+      <label for="task">Choose a Task:</label>
+      <select id="task" name="task" [(ngModel)]="selectedNameTask">
+        <option value="hair">Hair</option>
+        <option value="beard">Beard</option>
+        <option value="all">All</option>
+        <option value="style">Style</option>
+      </select>
+    </div>
+    <div>
+        <label for="task">Choose a Task:</label>
+        <select id="task" name="task" [(ngModel)]="selectedTimeTask">
+          <option value="hair">17:30</option>
+          <option value="beard">19:30</option>
+          <option value="all">14:30</option>
+          <option value="style">10:00</option>
+        </select>
+      </div>
+    <div>
+      <label for="user">Choose a User:</label>
+      <select id="user" name="user" [(ngModel)]="selectedUser" >
+        <option *ngFor="let user of users" [value]="user.id">{{ user.firstName }}</option>
+      </select>
+    </div>
+    <button type="submit">Add Task</button>
+  </form>

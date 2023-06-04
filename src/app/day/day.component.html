@@ -1,0 +1,16 @@
+<div class="day" *ngFor="let day of calendarData">
+  <h2>{{ day.day_number }}</h2>
+  <h2>{{ day.day_name }}</h2>
+
+  <div class="task">
+    {{ day.task?.actionName }}
+    {{ day.task?.time }}
+  </div>
+
+  <div *ngFor="let user of users">
+  <div *ngIf="day.task?.userId === user.id">
+    <p>{{ user.firstName }} {{ user.lastName }}</p>
+    <p> {{ user.tel }} </p>
+  </div>
+  </div>
+</div>

@@ -4,7 +4,7 @@ export interface CalendarModel {
     month: string,
     day_number: number,
     day_name: string,
-    task?: TaskModel
+    task?: TaskModel[]
 }
 
 export interface TaskModel {

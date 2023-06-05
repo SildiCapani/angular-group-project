@@ -11,6 +11,30 @@
       "firstName": "Adelina",
       "lastName": "Gjonaj",
       "tel": "0690000000"
+    },
+    {
+      "id": 5,
+      "firstName": "Brian",
+      "lastName": "Bunjaj",
+      "tel": "0690000000"
+    },
+    {
+      "id": 7,
+      "firstName": "Anxhela",
+      "lastName": "Jaho",
+      "tel": "0690000000"
+    },
+    {
+      "id": 8,
+      "firstName": "Hegi",
+      "lastName": "Gjoka",
+      "tel": "0690000000"
+    },
+    {
+      "firstName": "Brisild",
+      "lastName": "Capani",
+      "tel": "0696937389",
+      "id": 9
     }
   ],
   "calendar": [
@@ -20,11 +44,18 @@
       "month": "Juni",
       "day_number": "1",
       "day_name": "thursday",
-      "task": {
-        "actionName": "Action 1",
-        "time": "17:30",
-        "userId": 1
-      }
+      "task": [
+        {
+          "actionName": "All",
+          "time": "17:30",
+          "userId": 1
+        },
+        {
+          "actionName": "All",
+          "time": "17:30",
+          "userId": 7
+        }
+      ]
     },
     {
       "id": 2,
@@ -32,11 +63,23 @@
       "month": "Juni",
       "day_number": "2",
       "day_name": "friday",
-      "task": {
-        "actionName": "Action 2",
-        "time": "14:30",
-        "userId": 2
-      }
+      "task": [
+        {
+          "actionName": "All",
+          "time": "17:30",
+          "userId": 3
+        },
+        {
+          "actionName": "All",
+          "time": "17:30",
+          "userId": 1
+        },
+        {
+          "actionName": "Hair",
+          "time": "19:30",
+          "userId": 8
+        }
+      ]
     },
     {
       "id": 3,
@@ -44,11 +87,18 @@
       "month": "Juni",
       "day_number": "3",
       "day_name": "saturday",
-      "task": {
-        "actionName": "Action 3",
-        "time": "14:30",
-        "userId": 1
-      }
+      "task": [
+        {
+          "actionName": "All",
+          "time": "17:30",
+          "userId": 5
+        },
+        {
+          "actionName": "All",
+          "time": "17:30",
+          "userId": 2
+        }
+      ]
     },
     {
       "id": 4,
@@ -56,11 +106,23 @@
       "month": "Juni",
       "day_number": "4",
       "day_name": "sunday",
-      "task": {
-        "actionName": "hair",
-        "time": "all",
-        "userId": 1
-      }
+      "task": [
+        {
+          "actionName": "All",
+          "time": "17:30",
+          "userId": 1
+        },
+        {
+          "actionName": "All",
+          "time": "17:30",
+          "userId": 2
+        },
+        {
+          "actionName": "Hair",
+          "time": "14:30",
+          "userId": 1
+        }
+      ]
     },
     {
       "id": 5,
@@ -68,7 +130,7 @@
       "month": "Juni",
       "day_number": "5",
       "day_name": "monday",
-      "task": {}
+      "task": []
     },
     {
       "id": 6,
@@ -76,7 +138,7 @@
       "month": "Juni",
       "day_number": "6",
       "day_name": "tuesday",
-      "task": {}
+      "task": []
     },
     {
       "id": 7,
@@ -84,13 +146,7 @@
       "month": "Juni",
       "day_number": "7",
       "day_name": "wednesday",
-      "task": {}
-    },
-    {
-      "actionName": "beard",
-      "time": "beard",
-      "userId": 1,
-      "id": 8
+      "task": []
     }
   ]
 }

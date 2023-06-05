@@ -9,7 +9,7 @@ import { CalendarModel, UserModel } from 'src/calendar.model';
 })
 export class DayComponent {
 
-  calendarData!: CalendarModel[];
+  calendarData: CalendarModel[] = [];
 
   users: UserModel[]
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map, switchMap } from 'rxjs';
 import { environment } from '../environments/environment';
 import { CalendarModel, TaskModel, UserModel } from 'src/calendar.model';
 
@@ -37,8 +37,19 @@ export class CalenderService {
     const task: CalendarModel  = {
       ...newTask
     }
-    console.log(newTask)
-    return this.httpClient.put<CalendarModel>(`${this.url}/${newTask.id}`, task)
+    return this.httpClient.put<CalendarModel>(`${this.url}/${newTask.id}`, newTask)
    }
+
+   createUser(
+    newUser: Omit<UserModel, 'id'>
+  ): Observable<UserModel> {
+
+    const user: Omit<UserModel, 'id'> = {
+      ...newUser,
+    };
+    
+    return this.httpClient.post<UserModel>(this.userUrl, user);
+  }
+
 
 }

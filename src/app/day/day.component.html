@@ -2,15 +2,19 @@
   <h2>{{ day.day_number }}</h2>
   <h2>{{ day.day_name }}</h2>
 
-  <div class="task">
-    {{ day.task?.actionName }}
-    {{ day.task?.time }}
-  </div>
+  <div class="task"  *ngFor="let task of day.task">
+    <hr>
+    {{ task?.actionName }}
+    {{ task?.time }}
+  
 
   <div *ngFor="let user of users">
-  <div *ngIf="day.task?.userId === user.id">
+    
+  <div *ngIf="task.userId === user.id">
     <p>{{ user.firstName }} {{ user.lastName }}</p>
     <p> {{ user.tel }} </p>
   </div>
+  </div> 
   </div>
+ <hr>
 </div>

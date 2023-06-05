@@ -51,29 +51,22 @@ export class TaskFormComponent {
 
 
    onSubmit(): void {
-
-    const taskData = {
-      day: this.selectedDay,
+    const newTask: TaskModel = {
       actionName: this.selectedNameTask,
       time: this.selectedTimeTask,
-      userId: this.selectedUser
+      userId: Number(this.selectedUser)
     };
+  
+    if (!this.selectedDay.task) {
+      this.selectedDay.task = []; // Initialize tasks array if it doesn't exist
+    }
+    this.selectedDay.task?.push(newTask); // Add the new task to the tasks array
+  
+    this.calendarService.createTask(this.selectedDay).subscribe((task) => {
+      this.task.push(task);
+      console.log(this.selectedDay);
+    });
 
-     this.calendarService.createTask({
-      id: this.selectedDay.id, // Assuming the selected day has an 'id' property
-      year: this.selectedDay.year,
-      month: this.selectedDay.month,
-      day_number: this.selectedDay.day_number,
-      day_name: this.selectedDay.day_name,
-      task: {
-        actionName: this.selectedNameTask,
-        time: this.selectedTimeTask,
-        userId: this.selectedUser
-      }
-      
- }).subscribe((task) => this.task.push(task))
-    
-  }
-
+}
 
 }

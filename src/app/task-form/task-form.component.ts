@@ -62,6 +62,7 @@ export class TaskFormComponent {
    }
 
    onSubmit(): void {
+
     const newTask: TaskModel = {
       actionName: this.selectedNameTask,
       time: this.selectedTimeTask,
@@ -71,18 +72,24 @@ export class TaskFormComponent {
     if (!this.selectedDay.task) {
       this.selectedDay.task = []; // Initialize tasks array if it doesn't exist
     }
+
+
+      // Check if the selected time already exists in the tasks of the selected day
+    const existingTask = this.selectedDay.task.find(task => task.time === newTask.time);
+      if (existingTask) {
+      console.log('Task with the same time already exists. Cannot add the task.');
+      return; // Exit the method and prevent further execution
+    }
+
+
     this.selectedDay.task?.push(newTask); // Add the new task to the tasks array
   
-    this.calendarService.createTask(this.selectedDay).pipe(tap( () => {
-      this.calendarData = []
-      this.selectedNameTask ='';
-      this.selectedTimeTask = '';
-      this.selectedUser = 0;
-    }
-    )).subscribe((task) => {
+    this.calendarService.createTask(this.selectedDay).subscribe((task) => {
       this.task.push(task)
-    });
+     });
 
-}
+    console.log(this.selectedDay)
+
+  }
 
 }

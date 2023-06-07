@@ -1,9 +1,6 @@
 export interface CalendarModel {
     id: number
-    year: number,
-    month: string,
-    day_number: number,
-    day_name: string,
+    date: string
     task?: TaskModel[]
 }
 

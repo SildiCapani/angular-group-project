@@ -16,6 +16,14 @@ export class CalenderComponent implements OnInit {
 
   }
 
+  addDays(): void {
+    const startingDate = new Date(); // Set the starting date
+    const numberOfDays = 10; // Set the number of days to add
+
+    this.calendarService.addDays(startingDate, numberOfDays).subscribe((addedDays) => {
+     console.log('Days added:', addedDays);
+});
+  }
 
 
   ngOnInit(): void {

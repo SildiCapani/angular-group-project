@@ -1,6 +1,8 @@
 <div class="day" *ngFor="let day of calendarData">
-  <h2>{{ day.day_number }}</h2>
-  <h2>{{ day.day_name }}</h2>
+  <h2>{{ day.date | date: 'd' }}</h2> <!-- Display the day number -->
+  <h2>{{ day.date | date: 'EEEE' }}</h2> <!-- Display the day name -->
+  <h2>{{ day.date | date: 'MMMM' }}</h2> <!-- Display the month name -->
+  <h2>{{ day.date | date: 'yyyy' }}</h2> <!-- Display the year -->
 
   <div class="task"  *ngFor="let task of day.task">
     <hr>

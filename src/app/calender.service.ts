@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, switchMap } from 'rxjs';
+import { Observable, map, switchMap, tap } from 'rxjs';
 import { environment } from '../environments/environment';
 import { CalendarModel, TaskModel, UserModel } from 'src/calendar.model';
 
@@ -12,6 +12,7 @@ import { CalendarModel, TaskModel, UserModel } from 'src/calendar.model';
 export class CalenderService {
    private readonly url: string;
    private readonly userUrl: string;
+
 
   constructor(private httpClient: HttpClient) {
     this.url = `${environment.baseUrl}/calendar`;
@@ -35,19 +36,39 @@ export class CalenderService {
 
 
 
-  //  createTask(newTask: CalendarModel ): Observable<CalendarModel> {
+   createTask(newTask: CalendarModel ): Observable<CalendarModel> {
 
-  //   const task: CalendarModel  = {
-  //     ...newTask
-  //   }
-  //   return this.httpClient.put<CalendarModel>(`${this.url}/${newTask.id}`, newTask)
-  //  }
-
-
-
-  
+    const task: CalendarModel  = {
+      ...newTask
+    }
+    return this.httpClient.put<CalendarModel>(`${this.url}/${newTask.id}`, newTask)
+   }
 
 
+  addDays(startingDate: Date, numberOfDays: number): Observable<CalendarModel[]> {
+
+    return this.getCalendarData().pipe(
+      tap((calendarData: CalendarModel[]) => {
+        const lastDay = calendarData[calendarData.length - 1];
+        let lastId = lastDay ? lastDay.id : 0;
+    
+        for (let i = 0; i < numberOfDays; i++) {
+          const currentDate: Date = new Date(startingDate);
+          currentDate.setDate(currentDate.getDate() + i);
+      
+          const newDay: CalendarModel = {
+            id: lastId + i + 1,
+            date: currentDate.toISOString().slice(0, 24),
+            task: []
+          };
+      
+          this.httpClient.post<CalendarModel>(this.url, newDay).subscribe();
+        }
+      }),
+      switchMap(() => this.getCalendarData())
+    );
+    
+  }
 
 
    createUser(

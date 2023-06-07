@@ -32,13 +32,23 @@ export class CalenderService {
     );
    }
 
-   createTask(newTask: CalendarModel ): Observable<CalendarModel> {
 
-    const task: CalendarModel  = {
-      ...newTask
-    }
-    return this.httpClient.put<CalendarModel>(`${this.url}/${newTask.id}`, newTask)
-   }
+
+
+  //  createTask(newTask: CalendarModel ): Observable<CalendarModel> {
+
+  //   const task: CalendarModel  = {
+  //     ...newTask
+  //   }
+  //   return this.httpClient.put<CalendarModel>(`${this.url}/${newTask.id}`, newTask)
+  //  }
+
+
+
+  
+
+
+
 
    createUser(
     newUser: Omit<UserModel, 'id'>

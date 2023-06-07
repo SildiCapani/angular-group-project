@@ -14,7 +14,7 @@ export class DayComponent {
   users: UserModel[]
 
    constructor(private calendarService: CalenderService) {
-
+ 
     this.users = []
 
    }

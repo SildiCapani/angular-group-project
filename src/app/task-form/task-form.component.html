@@ -1,4 +1,5 @@
-<form (ngSubmit)="onSubmit()">
+<div>
+<form (ngSubmit)="onSubmit()" *ngIf="addMode">
     <label for="day">Select Day:</label>
     <select id="day" name="day" [(ngModel)]="selectedDay">
       <option *ngFor="let day of calendarData" [ngValue]="day"> {{ day.day_number }} {{ day.day_name }} {{ day.year }}</option>
@@ -13,12 +14,22 @@
       </select>
     </div>
     <div>
-        <label for="task">Choose a Task:</label>
+        <label for="task">Choose a Time:</label>
         <select id="task" name="task" [(ngModel)]="selectedTimeTask">
-          <option value="17:30">17:30</option>
-          <option value="19:30">19:30</option>
-          <option value="14:30">14:30</option>
           <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="11:30">11:30</option>
+          <option value="12:30">12:30</option>
+          <option value="13:00">13:00</option>
+          <option value="14:30">14:30</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+          <option value="16:30">16:30</option>
+          <option value="17:30">17:30</option>
+          <option value="18:00">18:00</option>
+          <option value="18:30">18:30</option>
+          <option value="19:30">19:30</option>
+          <option value="20:00">20:00</option>
         </select>
       </div>
     <div>
@@ -27,5 +38,7 @@
         <option *ngFor="let user of users" [value]="user.id">{{ user.firstName }}</option>
       </select>
     </div>
-    <button type="submit">Add Task</button>
+    <button type="submit">Add</button><button (click)="onClose()"> Close </button>
   </form>
+  <button type="button" (click)="onAdd()" *ngIf="!addMode">Add Task</button>
+</div>

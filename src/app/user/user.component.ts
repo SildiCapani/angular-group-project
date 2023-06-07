@@ -75,10 +75,6 @@ export class UserComponent {
             this.lastName = '';
             this.tel = '';
           })
-          // 3: use switchMap to change observable 
-          // switchMap(() => {
-          //   return this.userService.getUsers(this.search);
-          // })
         )
         .subscribe((user) => this.users.push(user)); // 4: optimal solution
     }

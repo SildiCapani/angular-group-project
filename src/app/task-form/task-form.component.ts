@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CalendarModel, TaskModel, UserModel } from 'src/calendar.model';
 import { CalenderService } from '../calender.service';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-task-form',
@@ -20,6 +21,8 @@ export class TaskFormComponent {
   task: CalendarModel[];
   calendarData!: CalendarModel[];
 
+  addMode: boolean;
+
   @Output() taskAdded: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(private calendarService: CalenderService) {
@@ -28,6 +31,7 @@ export class TaskFormComponent {
    this.selectedNameTask ='';
    this.selectedTimeTask = '';
    this.selectedUser = 0;
+   this.addMode = false
   }
 
   ngOnInit(): void {
@@ -49,6 +53,13 @@ export class TaskFormComponent {
     });
    }
 
+   onAdd(): void {
+    this.addMode = true
+   }
+
+   onClose(): void {
+    this.addMode = false
+   }
 
    onSubmit(): void {
     const newTask: TaskModel = {
@@ -62,9 +73,14 @@ export class TaskFormComponent {
     }
     this.selectedDay.task?.push(newTask); // Add the new task to the tasks array
   
-    this.calendarService.createTask(this.selectedDay).subscribe((task) => {
-      this.task.push(task);
-      console.log(this.selectedDay);
+    this.calendarService.createTask(this.selectedDay).pipe(tap( () => {
+      this.calendarData = []
+      this.selectedNameTask ='';
+      this.selectedTimeTask = '';
+      this.selectedUser = 0;
+    }
+    )).subscribe((task) => {
+      this.task.push(task)
     });
 
 }

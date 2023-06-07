@@ -29,12 +29,6 @@
       "firstName": "Hegi",
       "lastName": "Gjoka",
       "tel": "0690000000"
-    },
-    {
-      "firstName": "Brisild",
-      "lastName": "Capani",
-      "tel": "0696937389",
-      "id": 9
     }
   ],
   "calendar": [
@@ -67,7 +61,7 @@
         {
           "actionName": "All",
           "time": "17:30",
-          "userId": 3
+          "userId": 1
         },
         {
           "actionName": "All",
@@ -146,6 +140,122 @@
       "month": "Juni",
       "day_number": "7",
       "day_name": "wednesday",
+      "task": []
+    },
+    {
+      "id": 8,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "8",
+      "day_name": "thursday",
+      "task": []
+    },
+    {
+      "id": 9,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "9",
+      "day_name": "friday",
+      "task": [
+        {
+          "actionName": "Beard",
+          "time": "19:30",
+          "userId": 8
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "10",
+      "day_name": "saturday",
+      "task": []
+    },
+    {
+      "id": 11,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "11",
+      "day_name": "sunday",
+      "task": []
+    },
+    {
+      "id": 12,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "12",
+      "day_name": "monday",
+      "task": []
+    },
+    {
+      "id": 13,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "13",
+      "day_name": "tuesday",
+      "task": []
+    },
+    {
+      "id": 14,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "14",
+      "day_name": "wednesday",
+      "task": [
+        {
+          "actionName": "Beard",
+          "time": "10:00",
+          "userId": 1
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "15",
+      "day_name": "thursday",
+      "task": []
+    },
+    {
+      "id": 16,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "16",
+      "day_name": "friday",
+      "task": []
+    },
+    {
+      "id": 17,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "17",
+      "day_name": "saturday",
+      "task": []
+    },
+    {
+      "id": 18,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "18",
+      "day_name": "sunday",
+      "task": []
+    },
+    {
+      "id": 19,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "19",
+      "day_name": "monday",
+      "task": []
+    },
+    {
+      "id": 20,
+      "year": "2023",
+      "month": "Juni",
+      "day_number": "20",
+      "day_name": "tuesday",
       "task": []
     }
   ]

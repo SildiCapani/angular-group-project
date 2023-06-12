@@ -1,14 +1,33 @@
-<div>
-<form method="post" action="" (ngSubmit)="onSave($event)" *ngIf="addMode">
+<div class="user-container">
+  <form method="post" action="" (ngSubmit)="onSave($event)" *ngIf="addMode">
     <label for="firstName">First Name</label>
-    <input type="text" name="firstName" id="firstName" [(ngModel)]="firstName" required>
-    <br>
+    <input
+      type="text"
+      name="firstName"
+      id="firstName"
+      [(ngModel)]="firstName"
+      required
+    />
+    <br />
     <label for="lastName">Last Name</label>
-    <input type="text" name="lastName" id="lastName" [(ngModel)]="lastName" required>
-    <br>
+    <input
+      type="text"
+      name="lastName"
+      id="lastName"
+      [(ngModel)]="lastName"
+      required
+    />
+    <br />
     <label for="tel">Tel</label>
-    <input type="" name="tel" id="tel" [(ngModel)]="tel" required>
-    <br>
+    <input
+      type="tel"
+      name="tel"
+      id="tel"
+      placeholder="+355"
+      [(ngModel)]="tel"
+      required
+    />
+    <br />
     <button type="button" (click)="onClose()">Close</button>
     <button type="reset">Reset</button>
     <button type="submit">Save</button>

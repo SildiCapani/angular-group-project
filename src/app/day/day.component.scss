@@ -1,3 +1,69 @@
-.day{
-    padding: 5rem;
+/* General styling */
+.day {
+  display: inline-block;
+  vertical-align: top;
+  width: 14.28%; /* Distribute days evenly in a row */
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #212a3e;
+}
+
+// hr {
+//   margin-top: 10px;
+//   border: none;
+//   border-top: 1px solid #ddd;
+// }
+
+/* Date styling */
+h2:first-child {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* Task styling */
+.task {
+  margin-top: 10px;
+  background-color: #526d82;
+  padding: 10px;
+  border-radius: 4px #ddd;
+}
+
+.user p {
+  background-color: #526d82;
+}
+
+.task p {
+  margin: 5px 0;
+  color: white;
+}
+
+/* User styling */
+.task p:first-child {
+  font-weight: bold;
+}
+
+/* Apply some spacing between user details */
+.task p + p {
+  margin-top: 5px;
+}
+
+/* Apply alternating background color to tasks */
+.task:nth-child(even) {
+  background-color: #526d82;
+}
+
+/* Apply border to the outer container */
+.day:first-child {
+  border-top: 1px solid #ddd;
+}
+
+.day:last-child {
+  border-bottom: 1px solid #ddd;
 }

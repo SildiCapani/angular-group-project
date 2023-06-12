@@ -1,24 +1,25 @@
 <div class="day" *ngFor="let day of calendarData">
-  <h2>{{ day.date | date: 'd' }}</h2> 
-  <h2>{{ day.date | date: 'EEEE' }}</h2>
-  <h2>{{ day.date | date: 'MMMM' }}</h2> 
-  <h2>{{ day.date | date: 'yyyy' }}</h2> 
+  <h2>{{ day.date | date : "d" }}</h2>
+  <h2>{{ day.date | date : "EEEE" }}</h2>
+  <h2>{{ day.date | date : "MMMM" }}</h2>
+  <h2>{{ day.date | date : "yyyy" }}</h2>
 
-  <div class="task"  *ngFor="let task of day.task">
-    <hr>
-    
+  <div class="task" *ngFor="let task of day.task">
+    <hr />
+
     {{ task?.actionName }}
     {{ task?.time }}
-    
+    <br />
 
-  <div *ngFor="let user of users">
-    
-  <div *ngIf="task.userId === user.id">
-    <p>{{ user.firstName }} {{ user.lastName }}</p>
-    <p> {{ user.tel }} </p>
+    <div *ngFor="let user of users">
+      <div class="user" *ngIf="task.userId === user.id">
+        <p>
+          {{ user.firstName }} {{ user.lastName }} <br />
+
+          +355-{{ user.tel }}
+        </p>
+      </div>
+    </div>
   </div>
-  
-  </div>
-  </div>
- <hr>
+  <hr />
 </div>

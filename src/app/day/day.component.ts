@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CalenderService } from '../calender.service';
-import { CalendarModel, UserModel } from 'src/calendar.model';
+import { CalendarModel, TaskModel, UserModel } from 'src/calendar.model';
 
 @Component({
   selector: 'app-day',
@@ -10,6 +10,7 @@ import { CalendarModel, UserModel } from 'src/calendar.model';
 export class DayComponent {
 
   calendarData: CalendarModel[] = [];
+  calendarEntry!: CalendarModel;
 
   users: UserModel[]
 

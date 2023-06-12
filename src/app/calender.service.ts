@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, switchMap } from 'rxjs';
+import { Observable, switchMap, tap } from 'rxjs';
 import { environment } from '../environments/environment';
 import { CalendarModel, TaskModel, UserModel } from 'src/calendar.model';
 

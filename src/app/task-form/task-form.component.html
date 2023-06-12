@@ -2,7 +2,11 @@
 <form (ngSubmit)="onSubmit()" *ngIf="addMode">
     <label for="day">Select Day:</label>
     <select id="day" name="day" [(ngModel)]="selectedDay">
-      <option *ngFor="let day of calendarData" [ngValue]="day"> {{ day.day_number }} {{ day.day_name }} {{ day.year }}</option>
+      <option *ngFor="let day of calendarData" [ngValue]="day">
+        <h2>{{ day.date | date: 'd' }}</h2>
+        <h2>{{ day.date | date: 'MMMM' }}</h2> 
+        <h2>{{ day.date | date: 'yyyy' }}</h2> 
+      </option>
     </select>
     <div>
       <label for="task">Choose a Task:</label>

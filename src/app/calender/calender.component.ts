@@ -16,10 +16,9 @@ export class CalenderComponent implements OnInit {
 
   }
 
-
-
   ngOnInit(): void {
     this.calendarService.getCalendarData().subscribe(data => this.calendarData = data);
   }
+  
 
 }

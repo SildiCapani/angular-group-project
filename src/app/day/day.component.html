@@ -1,12 +1,15 @@
 <div class="day" *ngFor="let day of calendarData">
-  <h2>{{ day.day_number }}</h2>
-  <h2>{{ day.day_name }}</h2>
+  <h2>{{ day.date | date: 'd' }}</h2> 
+  <h2>{{ day.date | date: 'EEEE' }}</h2>
+  <h2>{{ day.date | date: 'MMMM' }}</h2> 
+  <h2>{{ day.date | date: 'yyyy' }}</h2> 
 
   <div class="task"  *ngFor="let task of day.task">
     <hr>
+    
     {{ task?.actionName }}
     {{ task?.time }}
-  
+    
 
   <div *ngFor="let user of users">
     
@@ -14,7 +17,8 @@
     <p>{{ user.firstName }} {{ user.lastName }}</p>
     <p> {{ user.tel }} </p>
   </div>
-  </div> 
+  </div>
+  <button>Delete Task</button>
   </div>
  <hr>
 </div>

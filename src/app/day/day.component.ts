@@ -10,13 +10,15 @@ import { CalendarModel, TaskModel, UserModel } from 'src/calendar.model';
 export class DayComponent {
 
   calendarData: CalendarModel[] = [];
-  calendarEntry!: CalendarModel;
+  calendarDay!: CalendarModel;
+  dayId: number;
 
   users: UserModel[]
 
    constructor(private calendarService: CalenderService) {
 
     this.users = []
+    this.dayId = 0
 
    }
 
@@ -27,12 +29,6 @@ export class DayComponent {
    getUsers(): void {
     this.calendarService.getUsers().subscribe(users => this.users = users )
    }
-   
-   fetchActionData(): void {
-    this.calendarData.forEach(calendarEntry => {
-      calendarEntry.task = calendarEntry.task;
-    });
-  }
 
    ngOnInit(): void {
      this.getCalandarData();
